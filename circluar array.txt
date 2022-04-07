@@ -1,0 +1,28 @@
+class CircularArray {
+    constructor(obj){
+        if(obj.constructor == Array){
+            this.arr = obj;
+        } else if(obj.constructor == Number){
+            parseInt(obj);
+            this.arr = [];
+            this.arr.unshift(obj);
+        } else {
+            throw 'not a valid type; input an array or number(s)';
+        }
+      
+      this.length = this.arr.length;
+      this.index = this.length -1;
+    }
+
+ 
+    rotation(num){
+       while(num%=this.length){
+        for(let i = 0; i < this.index; i++){
+            var temp = this.arr[i];
+            this.arr[i] = this.arr[this.index];
+            this.arr[this.index] = temp;
+        }
+        num--;
+    }
+        return this.arr
+    }
