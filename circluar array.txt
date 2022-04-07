@@ -6,8 +6,10 @@ class CircularArray {
             parseInt(obj);
             this.arr = [];
             this.arr.unshift(obj);
+        } else if(obj.contructor == String) {
+            this.arr = obj.split('');
         } else {
-            throw 'not a valid type; input an array or number(s)';
+            throw 'not valid'
         }
       
       this.length = this.arr.length;
