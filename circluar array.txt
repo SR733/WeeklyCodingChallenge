@@ -8,7 +8,9 @@ class CircularArray {
             this.arr.unshift(obj);
         } else if(obj.contructor == String) {
             this.arr = obj.split('');
-        } else {
+        } else if(obj.constructor == Object){
+            this.arr = Object.entries;
+        }else {
             throw 'not valid'
         }
       
